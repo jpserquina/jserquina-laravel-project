@@ -1,3 +1,38 @@
+# laravel-laradock-kickstart
+* Kickstart Laravel 7 project template, with laradock
+---
+## Setting up - checklist
+##### It it highly recommended to use [Laradock](https://laradock.io) with this project
+* (install Docker Desktop)
+* (allow file / drive permissions for Docker Desktop)
+* (pull repo, and pull associated submodules)
+* (go into project folder `~\laravel-laradock-kickstart`)
+* (inside folder `~\laravel-laradock-kickstart`)
+* `$ cd laradock`
+* `$ copy env-example .env`
+* `$ docker-compose up --build -d nginx mysql`
+* (allow permissions for Docker file access to host drive)
+* `$ docker exec -it laradock_workspace_1 bash`
+* (inside workspace instance, folder /var/www, user root)
+* `# composer install`
+* `# cp .env.example .env`
+* (modify .env, see section below: [Laravel .env - running on Laradock]())
+* `# php artisan key:generate`
+* `# php artisan migrate`
+* (test: [localhost](http://localhost))
+---
+## Laravel `.env` - running on Laradock 
+after copying `.env.example` to `.env` in the Laravel folder,
+
+edit the `.env` details as follows
+
+    DB_CONNECTION=mysql
+    DB_HOST=mysql
+    DB_PORT=3306
+    DB_DATABASE=default
+    DB_USERNAME=root
+    DB_PASSWORD=root 
+---
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
